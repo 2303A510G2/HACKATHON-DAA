@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Saathi - Empowering Indian Farmers</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #f5f5f5;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .solutions {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .solution-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonials {
+            padding: 4rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-text);
+            color: var(--light-text);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light-text);
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: #222;
+            color: var(--light-text);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--light-text);
+            background-color: #444;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--primary-color);
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .buyer-list {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        .buyer-list li {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .buyer-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .contact-btn:hover {
+            background-color: #e68a00;
+        }
+        
+        .info-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div >
+                   Krishi Saathi
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Indian Farmers with Smart Agricultural Solutions</h1>
+            <p>Improving crop yields, reducing waste, and connecting farmers directly to markets using modern technology.</p>
+            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Our Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" onclick="openModal('crop-optimization')">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Optimization</h3>
+                    <p>AI-powered recommendations for crop selection, planting times, and cultivation practices based on soil quality and weather patterns.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('smart-irrigation')">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Smart Irrigation</h3>
+                    <p>IoT-based water management systems that optimize irrigation schedules to conserve water while maximizing crop yields.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('pest-detection')">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Pest Detection</h3>
+                    <p>Image recognition technology to identify pests and diseases early, with organic treatment recommendations.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('post-harvest')">
+                    <div class="feature-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Post-Harvest Solutions</h3>
+                    <p>Guidance on proper storage techniques and access to cold storage facilities to reduce spoilage.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('market-access')">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Direct Market Access</h3>
+                    <p>Connect farmers directly with buyers, eliminating middlemen and ensuring fair prices for produce.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('analytics')">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Dashboard with key metrics and predictive analytics to help farmers make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <h2 class="section-title">Addressing Farmers' Challenges</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Low Crop Yields</h3>
+                    <p>Our soil testing and crop recommendation system helps select optimal crops and improve yields by up to 40%.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Water Shortages</h3>
+                    <p>Smart irrigation systems reduce water usage by 30-50% while maintaining or improving crop health.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Old Farming Methods</h3>
+                    <p>We provide training and access to modern, sustainable agricultural techniques.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Weather Uncertainty</h3>
+                    <p>Hyperlocal weather forecasts and alerts help farmers plan better and reduce weather-related risks.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Post-Harvest Losses</h3>
+                    <p>Our storage solutions and market connections help reduce post-harvest losses from 30% to under 10%.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Limited Market Access</h3>
+                    <p>Direct connections with buyers and transparent pricing mechanisms increase farmer incomes by 20-35%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Farmers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Since using Krishi Saathi, my wheat yields have increased by 35%. The irrigation recommendations saved me both water and money."</p>
+                    <p class="testimonial-author">- Ramesh Patel, Farmer from Punjab</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The pest detection feature helped me identify a fungal infection early. I treated it organically and saved my entire tomato crop."</p>
+                    <p class="testimonial-author">- Sunita Devi, Farmer from Maharashtra</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I got 20% better prices by selling directly to a food processing company through the Krishi Saathi marketplace."</p>
+                    <p class="testimonial-author">- Vijay Kumar, Farmer from Karnataka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Farming?</h2>
+            <p>Join thousands of Indian farmers who are increasing their yields, reducing waste, and getting better prices for their crops with Krishi Saathi.</p>
+            <a href="#" class="btn">Sign Up Now</a>
+            <a href="#" class="btn btn-outline">Request Demo</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Krishi Saathi</h3>
+                    <p>Empowering Indian farmers with technology to improve agricultural productivity and profitability.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Farm Tech Park, New Delhi, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> support@krishisaathi.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Krishi Saathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+    <div id="market-access-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('market-access-modal')">&times;</span>
+            <h2 class="modal-title">Direct Market Access</h2>
+            <p>Connect directly with verified buyers and get fair prices for your produce without middlemen.</p>
+            
+            <div class="info-section">
+                <h4>Available Buyers in Your Region</h4>
+                <ul class="buyer-list">
+                    <li>
+                        <span><strong>Agro Foods India</strong> - Purchasing: Wheat, Rice, Pulses</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Fresh Valley Exports</strong> - Purchasing: Fruits, Vegetables</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Organic Harvest</strong> - Purchasing: Organic Crops</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Local Co-operative Society</strong> - Purchasing: All farm produce</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <h4>How It Works</h4>
+                <ol>
+                    <li>Register your farm and products</li>
+                    <li>Get matched with suitable buyers</li>
+                    <li>Negotiate prices directly</li>
+                    <li>Arrange logistics (we can help)</li>
+                    <li>Receive payment securely</li>
+                </ol>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Register Your Produce</button>
+        </div>
+    </div>
+
+    <div id="crop-optimization-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('crop-optimization-modal')">&times;</span>
+            <h2 class="modal-title">Crop Optimization</h2>
+            
+            <div class="info-section">
+                <h4>Optimal Crop Selection</h4>
+                <p>Based on your soil test results and local weather patterns, we recommend the most suitable crops for maximum yield and profitability.</p>
+                
+                <div style="background: #f5f5f5; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5>Your Recommended Crops</h5>
+                    <ul>
+                        <li><strong>Primary Crop:</strong> Soybean (High yield potential: 3.2 tons/acre)</li>
+                        <li><strong>Secondary Crop:</strong> Chickpea (Good market demand)</li>
+                        <li><strong>Alternative:</strong> Pearl Millet (Drought resistant)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Planting Calendar</h4>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background-color: var(--primary-color); color: white;">
+                        <th style="padding: 0.5rem; text-align: left;">Crop</th>
+                        <th style="padding: 0.5rem; text-align: left;">Best Planting Window</th>
+                        <th style="padding: 0.5rem; text-align: left;">Harvest Period</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">Soybean</td>
+                        <td style="padding: 0.5rem;">June 15 - July 10</td>
+                        <td style="padding: 0.5rem;">October - November</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">Chickpea</td>
+                        <td style="padding: 0.5rem;">October 1 - October 30</td>
+                        <td style="padding: 0.5rem;">February - March</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">Pearl Millet</td>
+                        <td style="padding: 0.5rem;">July 1 - July 20</td>
+                        <td style="padding: 0.5rem;">September - October</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="info-section">
+                <h4>Cultivation Recommendations</h4>
+                <ul>
+                    <li><strong>Seed Rate:</strong> 60-70 kg/ha for soybean</li>
+                    <li><strong>Spacing:</strong> 45 cm between rows, 5 cm between plants</li>
+                    <li><strong>Fertilizer:</strong> 20:60:40 NPK per acre</li>
+                    <li><strong>Soil Preparation:</strong> 2 deep ploughings + 2 harrowings</li>
+                </ul>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Get Personalized Plan</button>
+        </div>
+    </div>
+
+    <div id="smart-irrigation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('smart-irrigation-modal')">&times;</span>
+            <h2 class="modal-title">Smart Irrigation System</h2>
+            
+            <div class="info-section">
+                <h4>Current Irrigation Recommendations</h4>
+                <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px; background: #e3f2fd; padding: 1rem; border-radius: 5px;">
+                        <h5>Next Irrigation</h5>
+                        <p><strong>Date:</strong> June 15, 2023</p>
+                        <p><strong>Amount:</strong> 25 mm</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #e8f5e9; padding: 1rem; border-radius: 5px;">
+                        <h5>Soil Moisture</h5>
+                        <p><strong>Current:</strong> 42%</p>
+                        <p><strong>Optimal:</strong> 55-60%</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #fff3e0; padding: 1rem; border-radius: 5px;">
+                        <h5>Water Saved</h5>
+                        <p><strong>This Season:</strong> 125,000 liters</p>
+                        <p><strong>Cost Saved:</strong> ₹3,750</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Irrigation Schedule (Next 7 Days)</h4>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <tr style="background-color: var(--primary-color); color: white;">
+                        <th style="padding: 0.5rem; text-align: left;">Date</th>
+                        <th style="padding: 0.5rem; text-align: left;">Time</th>
+                        <th style="padding: 0.5rem; text-align: left;">Duration</th>
+                        <th style="padding: 0.5rem; text-align: left;">Water Amount</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">June 15</td>
+                        <td style="padding: 0.5rem;">5:00 AM - 7:00 AM</td>
+                        <td style="padding: 0.5rem;">2 hours</td>
+                        <td style="padding: 0.5rem;">25 mm</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">June 18</td>
+                        <td style="padding: 0.5rem;">5:30 AM - 6:30 AM</td>
+                        <td style="padding: 0.5rem;">1 hour</td>
+                        <td style="padding: 0.5rem;">12 mm</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">June 21</td>
+                        <td style="padding: 0.5rem;">6:00 AM - 8:30 AM</td>
+                        <td style="padding: 0.5rem;">2.5 hours</td>
+                        <td style="padding: 0.5rem;">32 mm</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="info-section">
+                <h4>System Status</h4>
+                <ul>
+                    <li><strong>Soil Sensors:</strong> Active (3/3 working)</li>
+                    <li><strong>Weather Station:</strong> Connected</li>
+                    <li><strong>Water Pump:</strong> Ready</li>
+                    <li><strong>Last Calibration:</strong> June 1, 2023</li>
+                </ul>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Configure System</button>
+        </div>
+    </div>
+
+    <div id="pest-detection-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pest-detection-modal')">&times;</span>
+            <h2 class="modal-title">Pest Detection & Management</h2>
+            
+            <div class="info-section">
+                <h4>Recent Pest Alerts</h4>
+                <div style="background: #ffebee; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5 style="color: #c62828;">⚠ Alert: Aphid Infestation Detected</h5>
+                    <p><strong>Location:</strong> North Field (Soybean Crop)</p>
+                    <p><strong>Severity:</strong> Moderate (15% plants affected)</p>
+                    <p><strong>Recommended Action:</strong> Apply Neem Oil spray (2%) immediately</p>
+                </div>
+                
+                <div style="background: #fff8e1; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5 style="color: #ff8f00;">⚠ Warning: Whitefly Activity Increasing</h5>
+                    <p><strong>Location:</strong> Entire Farm</p>
+                    <p<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Saathi - Empowering Indian Farmers</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #f5f5f5;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .solutions {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .solution-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonials {
+            padding: 4rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-text);
+            color: var(--light-text);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light-text);
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: #222;
+            color: var(--light-text);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--light-text);
+            background-color: #444;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--primary-color);
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .buyer-list {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        .buyer-list li {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .buyer-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .contact-btn:hover {
+            background-color: #e68a00;
+        }
+        
+        .info-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div >
+                   Krishi Saathi
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Indian Farmers with Smart Agricultural Solutions</h1>
+            <p>Improving crop yields, reducing waste, and connecting farmers directly to markets using modern technology.</p>
+            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Our Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" onclick="openModal('crop-optimization')">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Optimization</h3>
+                    <p>AI-powered recommendations for crop selection, planting times, and cultivation practices based on soil quality and weather patterns.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('smart-irrigation')">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Smart Irrigation</h3>
+                    <p>IoT-based water management systems that optimize irrigation schedules to conserve water while maximizing crop yields.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('pest-detection')">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Pest Detection</h3>
+                    <p>Image recognition technology to identify pests and diseases early, with organic treatment recommendations.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('post-harvest')">
+                    <div class="feature-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Post-Harvest Solutions</h3>
+                    <p>Guidance on proper storage techniques and access to cold storage facilities to reduce spoilage.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('market-access')">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Direct Market Access</h3>
+                    <p>Connect farmers directly with buyers, eliminating middlemen and ensuring fair prices for produce.</p>
+                </div>
+                <div class="feature-card" onclick="openModal('analytics')">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Dashboard with key metrics and predictive analytics to help farmers make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <h2 class="section-title">Addressing Farmers' Challenges</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Low Crop Yields</h3>
+                    <p>Our soil testing and crop recommendation system helps select optimal crops and improve yields by up to 40%.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Water Shortages</h3>
+                    <p>Smart irrigation systems reduce water usage by 30-50% while maintaining or improving crop health.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Old Farming Methods</h3>
+                    <p>We provide training and access to modern, sustainable agricultural techniques.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Weather Uncertainty</h3>
+                    <p>Hyperlocal weather forecasts and alerts help farmers plan better and reduce weather-related risks.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Post-Harvest Losses</h3>
+                    <p>Our storage solutions and market connections help reduce post-harvest losses from 30% to under 10%.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Limited Market Access</h3>
+                    <p>Direct connections with buyers and transparent pricing mechanisms increase farmer incomes by 20-35%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Farmers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Since using Krishi Saathi, my wheat yields have increased by 35%. The irrigation recommendations saved me both water and money."</p>
+                    <p class="testimonial-author">- Ramesh Patel, Farmer from Punjab</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The pest detection feature helped me identify a fungal infection early. I treated it organically and saved my entire tomato crop."</p>
+                    <p class="testimonial-author">- Sunita Devi, Farmer from Maharashtra</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I got 20% better prices by selling directly to a food processing company through the Krishi Saathi marketplace."</p>
+                    <p class="testimonial-author">- Vijay Kumar, Farmer from Karnataka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Farming?</h2>
+            <p>Join thousands of Indian farmers who are increasing their yields, reducing waste, and getting better prices for their crops with Krishi Saathi.</p>
+            <a href="#" class="btn">Sign Up Now</a>
+            <a href="#" class="btn btn-outline">Request Demo</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Krishi Saathi</h3>
+                    <p>Empowering Indian farmers with technology to improve agricultural productivity and profitability.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Farm Tech Park, New Delhi, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> support@krishisaathi.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Krishi Saathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+    <div id="market-access-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('market-access-modal')">&times;</span>
+            <h2 class="modal-title">Direct Market Access</h2>
+            <p>Connect directly with verified buyers and get fair prices for your produce without middlemen.</p>
+            
+            <div class="info-section">
+                <h4>Available Buyers in Your Region</h4>
+                <ul class="buyer-list">
+                    <li>
+                        <span><strong>Agro Foods India</strong> - Purchasing: Wheat, Rice, Pulses</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Fresh Valley Exports</strong> - Purchasing: Fruits, Vegetables</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Organic Harvest</strong> - Purchasing: Organic Crops</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                    <li>
+                        <span><strong>Local Co-operative Society</strong> - Purchasing: All farm produce</span>
+                        <button class="contact-btn">Contact</button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <h4>How It Works</h4>
+                <ol>
+                    <li>Register your farm and products</li>
+                    <li>Get matched with suitable buyers</li>
+                    <li>Negotiate prices directly</li>
+                    <li>Arrange logistics (we can help)</li>
+                    <li>Receive payment securely</li>
+                </ol>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Register Your Produce</button>
+        </div>
+    </div>
+
+    <div id="crop-optimization-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('crop-optimization-modal')">&times;</span>
+            <h2 class="modal-title">Crop Optimization</h2>
+            
+            <div class="info-section">
+                <h4>Optimal Crop Selection</h4>
+                <p>Based on your soil test results and local weather patterns, we recommend the most suitable crops for maximum yield and profitability.</p>
+                
+                <div style="background: #f5f5f5; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5>Your Recommended Crops</h5>
+                    <ul>
+                        <li><strong>Primary Crop:</strong> Soybean (High yield potential: 3.2 tons/acre)</li>
+                        <li><strong>Secondary Crop:</strong> Chickpea (Good market demand)</li>
+                        <li><strong>Alternative:</strong> Pearl Millet (Drought resistant)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Planting Calendar</h4>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background-color: var(--primary-color); color: white;">
+                        <th style="padding: 0.5rem; text-align: left;">Crop</th>
+                        <th style="padding: 0.5rem; text-align: left;">Best Planting Window</th>
+                        <th style="padding: 0.5rem; text-align: left;">Harvest Period</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">Soybean</td>
+                        <td style="padding: 0.5rem;">June 15 - July 10</td>
+                        <td style="padding: 0.5rem;">October - November</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">Chickpea</td>
+                        <td style="padding: 0.5rem;">October 1 - October 30</td>
+                        <td style="padding: 0.5rem;">February - March</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">Pearl Millet</td>
+                        <td style="padding: 0.5rem;">July 1 - July 20</td>
+                        <td style="padding: 0.5rem;">September - October</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="info-section">
+                <h4>Cultivation Recommendations</h4>
+                <ul>
+                    <li><strong>Seed Rate:</strong> 60-70 kg/ha for soybean</li>
+                    <li><strong>Spacing:</strong> 45 cm between rows, 5 cm between plants</li>
+                    <li><strong>Fertilizer:</strong> 20:60:40 NPK per acre</li>
+                    <li><strong>Soil Preparation:</strong> 2 deep ploughings + 2 harrowings</li>
+                </ul>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Get Personalized Plan</button>
+        </div>
+    </div>
+
+    <div id="smart-irrigation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('smart-irrigation-modal')">&times;</span>
+            <h2 class="modal-title">Smart Irrigation System</h2>
+            
+            <div class="info-section">
+                <h4>Current Irrigation Recommendations</h4>
+                <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px; background: #e3f2fd; padding: 1rem; border-radius: 5px;">
+                        <h5>Next Irrigation</h5>
+                        <p><strong>Date:</strong> June 15, 2023</p>
+                        <p><strong>Amount:</strong> 25 mm</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #e8f5e9; padding: 1rem; border-radius: 5px;">
+                        <h5>Soil Moisture</h5>
+                        <p><strong>Current:</strong> 42%</p>
+                        <p><strong>Optimal:</strong> 55-60%</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: #fff3e0; padding: 1rem; border-radius: 5px;">
+                        <h5>Water Saved</h5>
+                        <p><strong>This Season:</strong> 125,000 liters</p>
+                        <p><strong>Cost Saved:</strong> ₹3,750</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h4>Irrigation Schedule (Next 7 Days)</h4>
+                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                    <tr style="background-color: var(--primary-color); color: white;">
+                        <th style="padding: 0.5rem; text-align: left;">Date</th>
+                        <th style="padding: 0.5rem; text-align: left;">Time</th>
+                        <th style="padding: 0.5rem; text-align: left;">Duration</th>
+                        <th style="padding: 0.5rem; text-align: left;">Water Amount</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">June 15</td>
+                        <td style="padding: 0.5rem;">5:00 AM - 7:00 AM</td>
+                        <td style="padding: 0.5rem;">2 hours</td>
+                        <td style="padding: 0.5rem;">25 mm</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 0.5rem;">June 18</td>
+                        <td style="padding: 0.5rem;">5:30 AM - 6:30 AM</td>
+                        <td style="padding: 0.5rem;">1 hour</td>
+                        <td style="padding: 0.5rem;">12 mm</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">June 21</td>
+                        <td style="padding: 0.5rem;">6:00 AM - 8:30 AM</td>
+                        <td style="padding: 0.5rem;">2.5 hours</td>
+                        <td style="padding: 0.5rem;">32 mm</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="info-section">
+                <h4>System Status</h4>
+                <ul>
+                    <li><strong>Soil Sensors:</strong> Active (3/3 working)</li>
+                    <li><strong>Weather Station:</strong> Connected</li>
+                    <li><strong>Water Pump:</strong> Ready</li>
+                    <li><strong>Last Calibration:</strong> June 1, 2023</li>
+                </ul>
+            </div>
+            
+            <button class="btn" style="margin-top: 1rem;">Configure System</button>
+        </div>
+    </div>
+
+    <div id="pest-detection-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pest-detection-modal')">&times;</span>
+            <h2 class="modal-title">Pest Detection & Management</h2>
+            
+            <div class="info-section">
+                <h4>Recent Pest Alerts</h4>
+                <div style="background: #ffebee; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5 style="color: #c62828;">⚠ Alert: Aphid Infestation Detected</h5>
+                    <p><strong>Location:</strong> North Field (Soybean Crop)</p>
+                    <p><strong>Severity:</strong> Moderate (15% plants affected)</p>
+                    <p><strong>Recommended Action:</strong> Apply Neem Oil spray (2%) immediately</p>
+                </div>
+                
+                <div style="background: #fff8e1; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <h5 style="color: #ff8f00;">⚠ Warning: Whitefly Activity Increasing</h5>
+                    <p><strong>Location:</strong> Entire Farm</p>
